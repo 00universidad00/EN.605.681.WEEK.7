@@ -21,16 +21,16 @@ public class CalculatePrice extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // This Method Is Called By The Servlet Container To Process A 'GET' Request.
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         handleRequest(request, response);
     }
 
     // This Method Is Called By The Servlet Container To Process A 'POST' Request.
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         handleRequest(request, response);
     }
 
-    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         // define params
         final String DATE_FORMAT = "MM/dd/yyyy";
@@ -39,6 +39,7 @@ public class CalculatePrice extends HttpServlet {
         final String HIKE_DATE = "hike_dates";
         final String HIKE_PRICE = "hike_price";
         final String HIKE_DURATION = "hike_duration";
+        final String HIKE_MEMBERS = "hike_members";
         final String ERROR = "error";
         final String DISPLAY_ERROR = "display_error";
         final String CLEAR_ERROR = "clear_error";
@@ -51,6 +52,8 @@ public class CalculatePrice extends HttpServlet {
         final String RESULT_HIKE_WEEKDAYS = "result_hike_weekdays";
         final String RESULT_HIKE_WEEKENDS = "result_hike_weekends";
         final String RESULT_HIKE_PRICE = "result_hike_price";
+        final String RESULT_HIKE_MEMBERS = "result_hike_members";
+        final String RESULT_HIKE_TOTAL_PRICE= "result_hike_total";
 
 
 
@@ -65,6 +68,7 @@ public class CalculatePrice extends HttpServlet {
             final int HIKE_ID_PARAM = Integer.parseInt(request.getParameter(HIKE_ID));
             final String HIKE_DATE_PARAM = request.getParameter(HIKE_DATE);
             final String HIKE_DURATION_PARAM = request.getParameter(HIKE_DURATION);
+            final int HIKE_MEMBERS_PARAM = Integer.parseInt(request.getParameter(HIKE_MEMBERS));
 
             try {
                 // convert start date to calendar date
@@ -93,6 +97,8 @@ public class CalculatePrice extends HttpServlet {
                     request.getSession().setAttribute(RESULT_HIKE_WEEKDAYS, rates.getNormalDays());
                     request.getSession().setAttribute(RESULT_HIKE_WEEKENDS, rates.getPremiumDays());
                     request.getSession().setAttribute(RESULT_HIKE_PRICE, rates.getCost());
+                    request.getSession().setAttribute(RESULT_HIKE_TOTAL_PRICE, rates.getCost() * HIKE_MEMBERS_PARAM);
+                    request.getSession().setAttribute(RESULT_HIKE_MEMBERS, HIKE_MEMBERS_PARAM);
                 } else {
                     // messages
                     String error_message =

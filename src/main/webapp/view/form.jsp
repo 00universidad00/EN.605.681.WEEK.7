@@ -19,10 +19,12 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </span>
                 </p>
+                <p class="help">Destination</p>
             </div>
         </div>
         <div class="column">
             <input id="hike_dates" class="input" name="hike_dates">
+            <p class="help">Start Date</p>
         </div>
         <div class="column is-2">
             <div class="field">
@@ -32,6 +34,51 @@
                         </select>
                     </span>
                 </p>
+                <p class="help">Tour Length</p>
+            </div>
+        </div>
+        <div class="column is-2">
+            <div class="field">
+                <p class="control has-icons-left">
+                <span class="select is-fullwidth">
+                    <select id="hike_members" name="hike_members">
+                        <option value="1" selected>
+                            1
+                        </option>
+                        <option value="2">
+                            2
+                        </option>
+                        <option value="3">
+                            3
+                        </option>
+                        <option value="4">
+                            4
+                        </option>
+                        <option value="5">
+                            5
+                        </option>
+                        <option value="6">
+                            6
+                        </option>
+                        <option value="7">
+                            7
+                        </option>
+                        <option value="8">
+                            8
+                        </option>
+                        <option value="9">
+                            9
+                        </option>
+                        <option value="10">
+                            10
+                        </option>
+                    </select>
+                </span>
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                </span>
+                </p>
+                <p class="help">Hikers</p>
             </div>
         </div>
         <div class="column is-2">
@@ -83,7 +130,7 @@
         // select hike duration list
         const select = duration;
         // create list of possible durations
-        const durations = [{3: 3, 5: 5}, {2: 2, 3: 3, 4: 4}, {5: 5, 7: 7}];
+        const durations = [{3: "3 Days", 5: "5 Days"}, {2: "2 Days", 3: "3 Days", 4: "4 Days"}, {5: "5 Days", 7: "7 Days"}];
         // build array based on function value
         const array = durations[value];
         // clear old values
