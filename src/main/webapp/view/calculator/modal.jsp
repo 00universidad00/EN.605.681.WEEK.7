@@ -7,7 +7,7 @@
                 <article class="message is-danger">
                     <div class="message-header">
                         <p>Error</p>
-                        <button class="delete" aria-label="delete"  onclick="closeModal()" type="submit" name="clear_error"></button>
+                        <button class="delete" aria-label="delete" type="submit" name="clear_error"></button>
                     </div>
                     <div class="message-body preformatted">
                             ${error}

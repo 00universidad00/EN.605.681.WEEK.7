@@ -86,6 +86,50 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+.mt-7 {
+    margin-top: 5rem;
+}
+
+.mb-7 {
+    margin-bottom: 5rem;
+}
+
+.my-7 {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.mt-8 {
+    margin-top: 8rem;
+}
+
+.mb-8 {
+    margin-bottom: 8rem;
+}
+
+.my-8 {
+    margin-bottom: 8rem !important;
+    margin-top: 8rem !important;
+}
+
+.mt-9 {
+    margin-top: 12rem;
+}
+
+.mb-9 {
+    margin-bottom: 12rem;
+}
+
+.my-9 {
+    margin-bottom: 12rem;
+    margin-top: 12rem;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
 .datetimepicker-dummy, .datetimepicker-dummy-wrapper {
     background-color: #fff !important;
     border-color: #dbdbdb !important;
