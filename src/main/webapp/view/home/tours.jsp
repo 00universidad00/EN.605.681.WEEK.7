@@ -11,7 +11,6 @@
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-4by3">
-                            <img src="./assets/illustrations/walk.svg" width="400" height="100">
                             <img src="./assets/illustrations/GL.jpg" width="400" height="100" alt="Placeholder image">
                         </figure>
                     </div>
